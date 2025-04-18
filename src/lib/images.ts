@@ -36,7 +36,7 @@ async function updateImageContext(imageName: string): Promise<void> {
 
 async function getNextImage(_options?: GetNextImageOptions): Promise<NextImage> {
 	// Fetch the list of images from the API route
-	const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+	const baseUrl = process.env.DEPLOYED === "true" ? "https://your-vercel-app.vercel.app" : "http://localhost:3000";
 	const res = await fetch(`${baseUrl}/api/images`);
 	const data = await res.json();
 

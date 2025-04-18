@@ -108,7 +108,7 @@ async function postImage({ path, text, altText }: PostImageOptions) {
 	const agent = new BskyAgent({ service: "https://bsky.social" });
 	BskyAgent.configure({
 		fetch: fetchHandler,
-	});
+	} as any);
 	await agent.login({
 		identifier: process.env.BSKY_IDENTIFIER || "BSKY_IDENTIFIER missing",
 		password: process.env.BSKY_PASSWORD || "BSKY_PASSWORD missing",

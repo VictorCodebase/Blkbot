@@ -34,7 +34,7 @@ async function updateImageContext(imageName: string): Promise<void> {
 	fs.writeFileSync(imageContextFilePath, JSON.stringify(newImageContext, null, 2));
 }
 
-async function getNextImage(options?: GetNextImageOptions): Promise<NextImage> {
+async function getNextImage(_options?: GetNextImageOptions): Promise<NextImage> {
 	// Fetch the list of images from the API route
 	const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
 	const res = await fetch(`${baseUrl}/api/images`);
